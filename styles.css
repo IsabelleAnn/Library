@@ -2,6 +2,104 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-size: 1rem;
+}
+
+body {
+    font-family: 'Arima', cursive;
+    font-weight: normal;
+    height: 100vh;
     background-color: black;
     color: white;
+}
+
+#header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+#header {
+    font-size: 3rem;
+}
+
+#add-book-btn {
+    background-color: transparent;
+    color: white;
+    font-family: 'Arima', cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px white solid;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#add-book-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+#header-container,
+#main-container {
+    border-bottom: 1px solid white;
+}
+
+#main-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, min(300px));
+    grid-auto-rows: min(350px);
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.book-card {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    text-transform: capitalize;
+}
+
+.book-card:nth-child(odd) {
+    background-color: rgb(118, 255, 255);
+}
+
+.book-card:nth-child(even) {
+    background-color: rgb(255, 190, 235);
+}
+
+.text-section {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.book-title {
+    font-size: 1.4rem;
+    color: black;
+    border-bottom: solid 1px black;
+    height: 50%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-author {
+    padding-top: 20px;
+}
+
+.book-pages {
+    font-size: .8rem;
+    padding-top: 10px;
 }
