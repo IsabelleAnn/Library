@@ -2,14 +2,56 @@ let myLibrary = [{ author: "JRR Tolkien", title: "The Lord of the Rings - The Fe
 const mainSection = document.querySelector("#main-container");
 const addBookBtn = document.querySelector("#add-book-btn");
 let count = 1;
+let form = document.getElementById("add-book-form");
+let submitBtn = document.getElementById("submit-new-book");
+let cancelSubmitBtn = document.getElementById("cancel-submit");
+let title = document.getElementById("title");
+let author = document.getElementById("author");
+let pages = document.getElementById("pages");
+let readStatus = document.getElementById("status");
 
 myLibrary.forEach(book => {
     generateBookCard(book);
 });
 
 addBookBtn.addEventListener("click", () => {
-    addBookToLibrary();
+    form.classList.remove("hidden");
 });
+
+cancelSubmitBtn.addEventListener("click", () => {
+    title.value = "";
+    author.value = "";
+    pages.value = "";
+    readStatus.checked = false;
+    form.classList.add("hidden");
+});
+
+submitBtn.addEventListener("click", () => {
+
+    if (title.valid && author.valid && pages.valid) {
+        let object = new Book(title.value, author.value, pages.value, readStatus.checked);
+        console.log(object);
+        addBookToLibrary(object);
+        title.value = "";
+        author.value = "";
+        pages.value = "";
+        readStatus.checked = false;
+
+        form.classList.add("hidden");
+
+    }
+
+});
+
+function validateData(title, author, pages) {
+    let titleValidity = title.valid;
+
+}
+
+function addBookToLibrary(newBook) {
+    myLibrary.push(newBook);
+    generateBookCard(newBook);
+}
 
 function Book(author, title, pages, status) {
     this.author = author;
@@ -52,13 +94,6 @@ function generateBookCard(element) {
     });
 
     count++;
-}
-
-function addBookToLibrary() {
-    let newBookObj = new Book(prompt("Enter name of Author"), prompt("Enter name of Title"), prompt("Enter number of pages"), prompt("Have you read the book yet?"));
-    myLibrary.push(newBookObj);
-    generateBookCard(newBookObj);
-
 }
 
 function deleteBookFromLibrary(parentID) {

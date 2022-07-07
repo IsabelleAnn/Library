@@ -11,29 +11,29 @@
 </head>
 
 <body>
-    <form action="submit" class="hidden" id="add-book-form">
+    <form class="hidden" id="add-book-form">
         <div class="form-container">
             <h1>Add A Book:</h1>
             <div class="form-data">
                 <label for="title">Title:</label>
-                <input type="text" id="title">
+                <input type="text" id="title" required minlength="2" maxlength="100" />
             </div>
             <div class="form-data">
                 <label for="author">Author:</label>
-                <input type="text">
+                <input type="text" id="author" required minlength="2" maxlength="100" />
             </div>
             <div class="form-data">
                 <label for="pages">Pages:</label>
-                <input type="number">
+                <input type="number" id="pages" required min="1" max="10000" />
             </div>
             <div class="form-data" id="status-container">
                 <label for="status" id="status-label">Read?</label>
-                <input type="checkbox" name="status" id="status">
+                <input type="checkbox" name="status" id="status" checked>
                 <span>Yes</span>
             </div>
             <div id="form-btns">
-                <button class="form-data" id="submit-new-book">Submit</button>
-                <button class="form-data" id="cancel-submit">Cancel</button>
+                <button type="submit" class="form-data" id="submit-new-book">Submit</button>
+                <button type="button" class="form-data" id="cancel-submit">Cancel</button>
             </div>
         </div>
     </form>
@@ -41,12 +41,10 @@
     <div id="header-container">
         <h1 id="header">My First Library</h1>
         <button id="add-book-btn">+ Book</button>
-
     </div>
 
     <div id="main-container">
     </div>
-
     <script src="/script.js"></script>
 </body>
 
