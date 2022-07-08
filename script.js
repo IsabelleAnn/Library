@@ -10,7 +10,7 @@ let author = document.getElementById("author");
 let pages = document.getElementById("pages");
 let readStatus = document.getElementById("status");
 
-//////////Generate Existing Library:
+//////////Add Books from Existing Library to DOM:
 
 myLibrary.forEach(book => {
     generateBookCard(book);
@@ -34,6 +34,7 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
     let object = new Book(author.value, title.value, pages.value, readStatus.checked, count);
     addBookToLibrary(object);
+    console.log(object);
     title.value = "";
     author.value = "";
     pages.value = "";
@@ -41,7 +42,7 @@ form.addEventListener("submit", (event) => {
     form.classList.add("hidden");
 });
 
-//////////Library Edit Functions:
+//////////Book Creation Functions:
 
 function Book(author, title, pages, status, ID) {
     this.author = author;
@@ -54,30 +55,40 @@ function Book(author, title, pages, status, ID) {
 function addBookToLibrary(newBook) {
     myLibrary.push(newBook);
     generateBookCard(newBook);
-    console.log("Added:", newBook);
-    printArray(myLibrary);
 }
 
-function printArray(array) {
-    array.forEach((item) => {
-        console.log(item);
-    });
-}
+////New Card Generator:
 
 function generateBookCard(element) {
+
     let bookCard = document.createElement("div");
     bookCard.classList.add(`book-card`);
     bookCard.setAttribute("id", `book-${element.ID}`);
     mainSection.appendChild(bookCard);
 
+    let btnsContainer = document.createElement("div");
+    btnsContainer.classList.add("btns-container");
+    bookCard.appendChild(btnsContainer);
+
     let deleteBtn = document.createElement("button");
     deleteBtn.classList.add("delete-btn");
     deleteBtn.textContent = "X";
-    bookCard.appendChild(deleteBtn);
+    btnsContainer.appendChild(deleteBtn);
 
-    let textSection = document.createElement("div");
-    textSection.classList.add("text-section");
-    bookCard.appendChild(textSection);
+    let statusBtn = document.createElement("div");
+    statusBtn.classList.add("status-btn");
+    if (element.status) {
+        statusBtn.textContent = "Read";
+        statusBtn.classList.add("read");
+
+    } else {
+        statusBtn.textContent = "Unread";
+    }
+    btnsContainer.appendChild(statusBtn);
+
+    let textContainer = document.createElement("div");
+    textContainer.classList.add("text-container");
+    bookCard.appendChild(textContainer);
 
     let bookTitle = document.createElement("h1");
     bookTitle.classList.add("book-title");
@@ -89,26 +100,40 @@ function generateBookCard(element) {
     bookPages.classList.add("book-pages");
     bookPages.textContent = `${element.pages} pages`;
 
-    textSection.appendChild(bookTitle);
-    textSection.appendChild(bookAuthor);
-    textSection.appendChild(bookPages);
+    textContainer.appendChild(bookTitle);
+    textContainer.appendChild(bookAuthor);
+    textContainer.appendChild(bookPages);
+
+    ////Book Card Event Listeners:
+    statusBtn.addEventListener("click", (e) => {
+        statusBtn.classList.toggle("read");
+        if (statusBtn.textContent === "Read") {
+            statusBtn.textContent = "Unread";
+            element.status = false;
+        } else {
+            statusBtn.textContent = "Read";
+            element.status = true;
+        }
+        console.log(element);
+    });
 
     deleteBtn.addEventListener("click", (e) => {
-        deleteBookFromLibrary(e.target.parentElement.id, element.ID);
+        console.log(element);
+        deleteBookFromLibrary(e.target.parentElement.parentElement.id, element.ID);
     });
+
+    ////ID # counter:
+
     count++;
 }
 
+////Remove Book From Library Function:
+
 function deleteBookFromLibrary(parentID, ID) {
-    // let index = Number(parentID.split("-").pop());
-    console.log("Index of Deleted: ", ID, parentID);
     let deleteMe = document.getElementById(parentID);
-    console.log("Delete: ", deleteMe);
     mainSection.removeChild(deleteMe);
     let index = myLibrary.findIndex(object => {
         return object.ID === ID;
     });
     myLibrary.splice(index, 1);
-    console.log(ID, parentID);
-    printArray(myLibrary);
 }

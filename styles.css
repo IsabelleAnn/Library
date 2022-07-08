@@ -1,3 +1,11 @@
+:root {
+    --btn-color-read: rgb(186, 255, 180);
+    --btn-hover-color-read: rgb(73, 255, 57);
+    --btn-color-unread: rgb(181, 188, 255);
+    --btn-hover-color-unread: rgb(81, 98, 255);
+    --main-font-family: 'Arima', cursive;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -6,7 +14,7 @@
 }
 
 body {
-    font-family: 'Arima', cursive;
+    font-family: var(--main-font-family);
     font-weight: normal;
     height: 100vh;
     background-color: black;
@@ -28,7 +36,7 @@ body {
 #add-book-btn {
     background-color: transparent;
     color: white;
-    font-family: 'Arima', cursive;
+    font-family: var(--main-font-family);
     font-size: 2rem;
     font-weight: 700;
     appearance: none;
@@ -68,7 +76,7 @@ body {
     flex-direction: column;
 }
 
-.text-section {
+.text-container {
     height: 80%;
     width: 90%;
     text-align: center;
@@ -101,14 +109,51 @@ body {
     justify-self: flex-end;
 }
 
+.btns-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .delete-btn {
     border: none;
     background-color: transparent;
-    font-weight: bold;
-    border-radius: 5px;
+    font-family: 'Fredoka One', cursive;
+    border-radius: 10px;
     width: 30px;
     height: 30px;
     cursor: pointer;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.delete-btn:hover {
+    color: rgb(0, 0, 0);
+}
+
+.status-btn {
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 100px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: black dotted 2px;
+    border-left: black dotted 2px;
+    background-color: var(--btn-color-unread);
+}
+
+.status-btn:hover {
+    background-color: var(--btn-hover-color-unread);
+}
+
+.read {
+    background-color: var(--btn-color-read);
+}
+
+.read:hover {
+    background-color: var(--btn-hover-color-read);
 }
 
 .hidden {
@@ -127,7 +172,7 @@ body {
 }
 
 .form-container {
-    background-color: rgb(185, 124, 255);
+    background-color: var(--btn-color-unread);
     color: black;
     display: flex;
     flex-direction: column;
@@ -172,14 +217,22 @@ button.form-data {
     width: 100px;
     border: none;
     cursor: pointer;
-    font-family: 'Arima', cursive;
+    font-family: var(--main-font-family);
     font-weight: bold;
 }
 
 #submit-new-book {
-    background-color: aquamarine;
+    background-color: var(--btn-color-read);
+}
+
+#submit-new-book:hover {
+    background-color: var(--btn-hover-color-read);
 }
 
 #cancel-submit {
     background-color: rgb(228, 228, 228);
+}
+
+#cancel-submit:hover {
+    background-color: rgb(146, 146, 146);
 }
