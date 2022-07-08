@@ -236,3 +236,27 @@ button.form-data {
 #cancel-submit:hover {
     background-color: rgb(146, 146, 146);
 }
+
+#footer {
+    color: white;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    text-align: center;
+}
+
+#footer,
+#footer i {
+    font-size: 15px;
+}
+
+a:link,
+a:active {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover,
+a:visited {
+    color: var(--btn-color-read);
+    text-decoration: none;
+}
