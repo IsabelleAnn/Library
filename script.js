@@ -1,4 +1,14 @@
-let myLibrary = [{ author: "JRR Tolkien", title: "The Lord of the Rings - The Fellowship of the Ring", pages: "330", status: true, ID: 1 }, { author: "manual input", title: "my book", pages: "400", status: false, ID: 2 }, { author: "JRR Tolkien", title: "The Lord of the Rings - The Fellowship of the Ring", pages: "330", status: true, ID: 3 }, { author: "manual input", title: "my book", pages: "400", status: false, ID: 4 }, { author: "JRR Tolkien", title: "The Lord of the Rings - The Fellowship of the Ring", pages: "330", status: true, ID: 5 }, { author: "manual input", title: "my book", pages: "400", status: false, ID: 6 }, { author: "JRR Tolkien", title: "The Lord of the Rings - The Fellowship of the Ring", pages: "330", status: true, ID: 7 }, { author: "manual input", title: "my book", pages: "400", status: false, ID: 8 }, { author: "JRR Tolkien", title: "The Lord of the Rings - The Fellowship of the Ring", pages: "330", status: true, ID: 9 }];
+let myLibrary = [
+    { author: "JRR Tolkien", title: "The Lord of the Rings - The Fellowship of the Ring", pages: "330", status: true, ID: 1 },
+    { author: "JRR Tolkien", title: "The Lord of the Rings - The Two Towers", pages: "400", status: false, ID: 2 },
+    { author: "JRR Tolkien", title: "The Lord of the Rings - Return of the King", pages: "330", status: true, ID: 3 },
+    { author: "JRR Tolkien", title: "The Hobbit", pages: "400", status: false, ID: 4 },
+    { author: "Terry Pratchett", title: "The Color of Magic", pages: "330", status: true, ID: 5 },
+    { author: "Terry Pratchett", title: "Small Gods", pages: "400", status: false, ID: 6 },
+    { author: "Terry Pratchett", title: "The Wee Free Men", pages: "330", status: true, ID: 7 },
+    { author: "Jane Austen", title: "Price and Prejudice", pages: "400", status: false, ID: 8 },
+    { author: "Jane Austen", title: "Emma", pages: "330", status: true, ID: 9 }
+];
 const mainSection = document.querySelector("#main-container");
 const addBookToLibraryBtn = document.querySelector("#add-book-btn");
 let count = 1;
