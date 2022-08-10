@@ -11,6 +11,13 @@ Part of The Odin Project Curriculum
 
   * CSS
 
+## Tools:
+  * Visual Studio Code
+  
+  * Ubuntu Linux on VirtualBox
+  
+  * git + Github
+
 ## Features:
   * Add Book
 
