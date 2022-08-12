@@ -44,13 +44,17 @@ form.addEventListener("submit", (event) => {
 
 //////////Book Creation Functions:
 
-function Book(author, title, pages, status, ID) {
-    this.author = author;
-    this.title = title;
-    this.pages = pages;
-    this.status = status;
-    this.ID = ID;
+class Book {
+    constructor(author, title, pages, status, ID) {
+        this.author = author;
+        this.title = title;
+        this.pages = pages;
+        this.status = status;
+        this.ID = ID;
+    }
 }
+
+
 
 function addBookToLibrary(newBook) {
     myLibrary.push(newBook);
