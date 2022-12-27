@@ -1,262 +1,261 @@
 :root {
-    --btn-color-read: rgb(186, 255, 180);
-    --btn-hover-color-read: rgb(73, 255, 57);
-    --btn-color-unread: rgb(181, 188, 255);
-    --btn-hover-color-unread: rgb(81, 98, 255);
-    --main-font-family: 'Arima', cursive;
+  --btn-color-read: rgb(186, 255, 180);
+  --btn-hover-color-read: rgb(73, 255, 57);
+  --btn-color-unread: rgb(181, 188, 255);
+  --btn-hover-color-unread: rgb(81, 98, 255);
+  --main-font-family: "Arima", cursive;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1rem;
 }
 
 body {
-    font-family: var(--main-font-family);
-    font-weight: normal;
-    height: 100vh;
-    background-color: black;
-    color: white;
+  font-family: var(--main-font-family);
+  font-weight: normal;
+  /* height: 100vh; */
+  background-color: black;
+  color: white;
 }
 
 #header-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
 }
 
 #header {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 #add-book-btn {
-    background-color: transparent;
-    color: white;
-    font-family: var(--main-font-family);
-    font-size: 2rem;
-    font-weight: 700;
-    appearance: none;
-    -webkit-appearance: none;
-    border: 1px white solid;
-    width: 150px;
-    height: 50px;
-    border-radius: 10px;
-    cursor: pointer;
+  background-color: transparent;
+  color: white;
+  font-family: var(--main-font-family);
+  font-size: 2rem;
+  font-weight: 700;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px white solid;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 #add-book-btn:hover {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 
 #header-container,
 #main-container {
-    border-bottom: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 #main-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, min(250px));
-    grid-auto-rows: min(300px);
-    gap: 20px;
-    padding: 20px;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, min(250px));
+  grid-auto-rows: min(300px);
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
 }
 
 .book-card {
-    background-color: white;
-    color: black;
-    border-radius: 10px;
-    text-transform: capitalize;
-    display: flex;
-    flex-direction: column;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
 }
 
 .text-container {
-    height: 80%;
-    width: 90%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    margin: 20px;
+  height: 80%;
+  width: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  margin: 20px;
 }
 
 .book-title {
-    font-size: 1.3rem;
-    color: black;
-    padding: 10px 0px;
-    width: 100%;
-    min-height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-size: 1.3rem;
+  color: black;
+  padding: 10px 0px;
+  width: 100%;
+  min-height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .book-author {
-    padding-top: 20px;
-    justify-self: flex-end;
+  padding-top: 20px;
+  justify-self: flex-end;
 }
 
 .book-pages {
-    font-size: .8rem;
-    padding-top: 5px;
-    justify-self: flex-end;
+  font-size: 0.8rem;
+  padding-top: 5px;
+  justify-self: flex-end;
 }
 
 .btns-container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .delete-btn {
-    border: none;
-    background-color: transparent;
-    font-family: 'Fredoka One', cursive;
-    border-radius: 10px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    color: rgba(0, 0, 0, 0.5);
+  border: none;
+  background-color: transparent;
+  font-family: "Fredoka One", cursive;
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .delete-btn:hover {
-    color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
 .status-btn {
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    width: 100px;
-    cursor: pointer;
-    text-align: center;
-    font-weight: 400;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: black dotted 2px;
-    border-left: black dotted 2px;
-    background-color: var(--btn-color-unread);
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 100px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: black dotted 2px;
+  border-left: black dotted 2px;
+  background-color: var(--btn-color-unread);
 }
 
 .status-btn:hover {
-    background-color: var(--btn-hover-color-unread);
+  background-color: var(--btn-hover-color-unread);
 }
 
 .read {
-    background-color: var(--btn-color-read);
+  background-color: var(--btn-color-read);
 }
 
 .read:hover {
-    background-color: var(--btn-hover-color-read);
+  background-color: var(--btn-hover-color-read);
 }
 
 .hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 #add-book-form {
-    position: absolute;
-    display: flex;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.26);
-    z-index: 10;
+  position: absolute;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.26);
+  z-index: 10;
 }
 
 .form-container {
-    background-color: var(--btn-color-unread);
-    color: black;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    justify-self: center;
-    width: fit-content;
-    height: fit-content;
-    padding: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.486);
-    border-radius: 10px;
+  background-color: var(--btn-color-unread);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-self: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.486);
+  border-radius: 10px;
 }
 
 .form-data {
-    display: flex;
-    flex-direction: column;
-    padding: 5px 0px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0px;
 }
 
 #status-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 #status-container span {
-    padding-left: 5px;
+  padding-left: 5px;
 }
 
 #status-label {
-    padding-right: 20px;
+  padding-right: 20px;
 }
 
 #form-btns {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 button.form-data {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 100px;
-    border: none;
-    cursor: pointer;
-    font-family: var(--main-font-family);
-    font-weight: bold;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--main-font-family);
+  font-weight: bold;
 }
 
 #submit-new-book {
-    background-color: var(--btn-color-read);
+  background-color: var(--btn-color-read);
 }
 
 #submit-new-book:hover {
-    background-color: var(--btn-hover-color-read);
+  background-color: var(--btn-hover-color-read);
 }
 
 #cancel-submit {
-    background-color: rgb(228, 228, 228);
+  background-color: rgb(228, 228, 228);
 }
 
 #cancel-submit:hover {
-    background-color: rgb(146, 146, 146);
+  background-color: rgb(146, 146, 146);
 }
 
 #footer {
-    color: white;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    text-align: center;
+  color: white;
+  margin-top: 10px;
+  text-align: center;
 }
 
 #footer,
 #footer i {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 a:link,
 a:active {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 a:hover,
 a:visited {
-    color: var(--btn-color-read);
-    text-decoration: none;
+  color: var(--btn-color-read);
+  text-decoration: none;
 }
